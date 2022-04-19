@@ -9,7 +9,7 @@ const cekPalindrom = (word) => {
     cek += word[i];
   }
 
-  if (word !== cek) {
+  if (word.toLowerCase() !== cek.toLowerCase()) {
     return "Bukan Palindrom";
   }
   return "Palindrom";
