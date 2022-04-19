@@ -5,23 +5,23 @@ const reverseWords = (str) => {
     return "str harus berupa String";
   }
 
-  let hasil = "";
-  let kata = "";
+  let result = "";
+  let word = "";
 
   for (let i = 0; i < str.length; i++) {
-    // split str dengan memisahkan spasi yang membentuk kata
+    // split str dengan memisahkan spasi yang membentuk word
     if (str[i] !== " ") {
-      kata += str[i];
+      word += str[i];
     } else {
-      // reverse kata dengan mengambil setiap kata yang sudah dipisah
-      hasil = kata + " " + hasil;
-      kata = "";
+      // reverse word dengan mengambil setiap word yang sudah dipisah
+      result = word + " " + result;
+      word = "";
     }
   }
-  // join kata yang sudah direverse lalu digabung dengan spasi
-  hasil = kata + " " + hasil;
+  // join word yang sudah direverse lalu digabung dengan spasi
+  result = word + " " + result;
 
-  return hasil;
+  return result;
 };
 
 console.log(reverseWords("Saya belajar Javascript"));
