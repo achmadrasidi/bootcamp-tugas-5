@@ -6,7 +6,7 @@
 
 const divideAndSort = (num) => {
   if (typeof num !== "number") {
-    return "num harus berupa number";
+    return "num harus berupa Number";
   }
 
   const divider = num.toString().split("0");
