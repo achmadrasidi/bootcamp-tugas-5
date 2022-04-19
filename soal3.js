@@ -68,4 +68,4 @@ Pajak	: ${taxCost}
 SubTotal: ${subtotal}`;
 };
 
-console.log(arkFood(75000, "ARKFOOD5", 1, true));
+console.log(arkFood(75000, "ARKFOOD5", 5, true));
