@@ -49,7 +49,7 @@ const arkFood = (price, promoCode, distance, tax) => {
     return "Voucher tidak tersedia";
   }
 
-  for (const obj of voucher) {
+  for (const obj of filteredVoucher) {
     if (price < obj.minPrice) {
       discPrice = 0;
     } else if (price * obj.discPercent > obj.maxDiscPrice) {
@@ -67,5 +67,21 @@ Ongkir  : ${deliveryCost}
 Pajak	: ${taxCost}
 SubTotal: ${subtotal}`;
 };
-
+console.log("--Diskon Normal--");
 console.log(arkFood(75000, "ARKFOOD5", 5, true));
+console.log("--Diskon dibawah harga minimum--");
+console.log(arkFood(40000, "ARKFOOD5", 5, true));
+console.log("--Diskon diatas maksimal potongan--");
+console.log(arkFood(200000, "ARKFOOD5", 5, true));
+console.log("--Diskon Normal--");
+console.log(arkFood(15000, "DITRAKTIRDEMY", 5, true));
+console.log("--Diskon dibawah harga minimum--");
+console.log(arkFood(40000, "DITRAKTIRDEMY", 5, true));
+console.log("--Diskon diatas maksimal potongan--");
+console.log(arkFood(75000, "DITRAKTIRDEMY", 5, true));
+console.log("--Test Error--");
+console.log(arkFood("75000", "DITRAKTIRDEMY", 5, true));
+console.log(arkFood(75000, 0, 5, true));
+console.log(arkFood(75000, "DITRAKTIRDEMY", "5", true));
+console.log(arkFood(75000, "DITRAKTIRDEMY", 5, "true"));
+console.log(arkFood(75000, "DITRAKTIRDEMYa", 5, true));
