@@ -5,13 +5,13 @@ const cekPalindrom = (word) => {
   if (typeof word !== "string") {
     return "word harus berupa string";
   }
-  let cek = "";
-  // pemasukkan kata palindrom ke variabel cek
+  let palindrom = "";
+  // pemasukkan kata palindrom ke variabel palindrom
   for (let i = word.length - 1; i >= 0; i--) {
-    cek += word[i];
+    palindrom += word[i];
   }
-  // cek word dengan variabel cek
-  if (word.toLowerCase() !== cek.toLowerCase()) {
+  // palindrom word dengan variabel palindrom
+  if (word.toLowerCase() !== palindrom.toLowerCase()) {
     return "Bukan Palindrom";
   }
   return "Palindrom";

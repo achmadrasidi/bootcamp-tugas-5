@@ -20,6 +20,9 @@ const arkFood = (price, promoCode, distance, tax) => {
   if (price < 0 || distance < 0) {
     return "harga dan jarak harus lebih dari 0";
   }
+  if (promoCode !== "ARKFOOD5" && promoCode !== "DITRAKTIRDEMY") {
+    return "Voucher tidak tersedia";
+  }
 
   let discPrice;
 
@@ -31,7 +34,7 @@ const arkFood = (price, promoCode, distance, tax) => {
     { name: "DITRAKTIRDEMY", minPrice: 25000, maxDiscPrice: 30000, discPercent: 0.6 },
   ];
 
-  for (let i = 2; i < distance; i++) {
+  for (let i = 3; i <= distance; i++) {
     deliveryCost += 3000;
   }
 
@@ -39,20 +42,18 @@ const arkFood = (price, promoCode, distance, tax) => {
     taxCost = price * 0.05;
   }
 
-  const filteredVoucher = voucher.filter((val) => val.name === promoCode);
-  if (filteredVoucher.length === 0) {
-    return "Voucher tidak tersedia";
-  }
-
-  for (const obj of filteredVoucher) {
-    if (price < obj.minPrice) {
-      discPrice = 0;
-    } else if (price * obj.discPercent > obj.maxDiscPrice) {
-      discPrice = obj.maxDiscPrice;
-    } else {
-      discPrice = price * obj.discPercent;
+  // langsung dimasukkan ke dalam method
+  voucher.forEach((val) => {
+    if (val.name === promoCode) {
+      if (price < val.minPrice) {
+        discPrice = 0;
+      } else if (price * val.discPercent > val.maxDiscPrice) {
+        discPrice = val.maxDiscPrice;
+      } else {
+        discPrice = price * val.discPercent;
+      }
     }
-  }
+  });
 
   const subtotal = price - discPrice + deliveryCost + taxCost;
 

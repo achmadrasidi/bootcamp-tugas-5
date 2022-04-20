@@ -10,7 +10,7 @@ const divideAndSort = (num) => {
   }
   // split number jadi array dengan misahkan 0
   const divider = num.toString().split("0");
-  // pisahkan array menjadi per angka dan sort berdasarkan urutan kelompok
+  // pisahkan array menjadi per angka dan sort berdasarkan urutan dalam kelompok
   const result = divider.map((val) => val.split("").sort((a, b) => a - b));
   // gabungkan hasil dari array sort dengan menjadikannya number
   return Number(result.map((val) => val.join("")).join(""));
