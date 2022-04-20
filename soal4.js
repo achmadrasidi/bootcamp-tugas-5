@@ -15,3 +15,4 @@ const divideAndSort = (num) => {
   return Number(result.map((val) => val.join("")).join(""));
 };
 console.log(divideAndSort(5956560159466056));
+console.log(divideAndSort("5956560159466056"));
