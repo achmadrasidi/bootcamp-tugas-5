@@ -17,6 +17,7 @@ const reverseWords = (str) => {
       // reverse word dengan mengambil setiap word yang sudah dipisah
       if (result === " ") {
         result = word + result;
+        word = "";
       } else {
         result = word + " " + result;
         word = "";
