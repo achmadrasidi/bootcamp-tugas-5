@@ -1,6 +1,7 @@
 // Reverse Words
 
 const reverseWords = (str) => {
+  // cek parameter str harus string
   if (typeof str !== "string") {
     return "str harus berupa String";
   }
@@ -25,3 +26,4 @@ const reverseWords = (str) => {
 };
 
 console.log(reverseWords("Saya belajar Javascript"));
+console.log(reverseWords(0));
