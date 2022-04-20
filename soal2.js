@@ -15,8 +15,12 @@ const reverseWords = (str) => {
       word += str[i];
     } else {
       // reverse word dengan mengambil setiap word yang sudah dipisah
-      result = word + " " + result;
-      word = "";
+      if (result === " ") {
+        result = word + result;
+      } else {
+        result = word + " " + result;
+        word = "";
+      }
     }
   }
   // join word yang sudah direverse lalu digabung dengan spasi
