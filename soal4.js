@@ -8,11 +8,15 @@ const divideAndSort = (num) => {
   if (typeof num !== "number") {
     return "num harus berupa Number";
   }
-
+  // split number jadi array dengan misahkan 0
   const divider = num.toString().split("0");
+  // pisahkan array menjadi per angka dan sort berdasarkan urutan kelompok
   const result = divider.map((val) => val.split("").sort((a, b) => a - b));
-
+  // gabungkan hasil dari array sort dengan menjadikannya number
   return Number(result.map((val) => val.join("")).join(""));
 };
+
+console.log("--Hasil--");
 console.log(divideAndSort(5956560159466056));
+console.log("--Error--");
 console.log(divideAndSort("5956560159466056"));

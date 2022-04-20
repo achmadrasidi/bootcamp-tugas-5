@@ -29,6 +29,7 @@ const reverseWords = (str) => {
 
   return result;
 };
-
+console.log("--Hasil--");
 console.log(reverseWords("Saya belajar Javascript"));
+console.log("--Error--");
 console.log(reverseWords(0));
